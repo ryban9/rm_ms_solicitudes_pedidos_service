@@ -1,0 +1,11 @@
+ec\rmdetalles\pedidos\api\HistorialEstadoResponse.class
+ec\rmdetalles\pedidos\api\ConvertirSolicitudRequest.class
+ec\rmdetalles\pedidos\domain\EstadoPedido.class
+ec\rmdetalles\pedidos\api\ApiExceptionHandler.class
+ec\rmdetalles\pedidos\service\ResourceNotFoundException.class
+ec\rmdetalles\pedidos\api\CambiarEstadoRequest.class
+ec\rmdetalles\pedidos\api\PedidoController.class
+ec\rmdetalles\pedidos\api\EstadoPedidoResponse.class
+ec\rmdetalles\pedidos\PedidosServiceApplication.class
+ec\rmdetalles\pedidos\domain\HistorialEstadoPedido.class
+ec\rmdetalles\pedidos\api\DetalleSolicitudRequest.class
