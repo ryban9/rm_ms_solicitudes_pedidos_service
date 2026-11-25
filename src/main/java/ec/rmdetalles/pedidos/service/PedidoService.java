@@ -1,7 +1,6 @@
 package ec.rmdetalles.pedidos.service;
 
 import ec.rmdetalles.pedidos.api.DetalleSolicitudRequest;
-import ec.rmdetalles.pedidos.api.EstadoPedidoResponse;
 import ec.rmdetalles.pedidos.api.HistorialEstadoResponse;
 import ec.rmdetalles.pedidos.api.PedidoDetalleResponse;
 import ec.rmdetalles.pedidos.api.PedidoResponse;
@@ -26,7 +25,7 @@ import java.util.UUID;
 import java.util.Locale;
 
 @Service
-@Transactional
+    @Transactional
 public class PedidoService {
     private final PedidoRepository pedidos;
     private final PedidoDetalleRepository detalles;
@@ -43,12 +42,6 @@ public class PedidoService {
                          HistorialEstadoPedidoRepository historial, NegocioRepository negocios) {
         this.pedidos=pedidos; this.detalles=detalles; this.clientes=clientes; this.productos=productos;
         this.estados=estados; this.transiciones=transiciones; this.historial=historial; this.negocios=negocios;
-    }
-
-    @Transactional(readOnly = true)
-    public List<EstadoPedidoResponse> listarEstados() {
-        return estados.findByNegocioIdAndActivoTrueOrderByOrdenAsc(NegocioContext.getRequired())
-                .stream().map(EstadoPedidoResponse::from).toList();
     }
 
     @Transactional(readOnly = true)

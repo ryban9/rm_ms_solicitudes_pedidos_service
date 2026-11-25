@@ -20,9 +20,6 @@ public class PedidoController {
     private final PedidoService service;
     public PedidoController(PedidoService service) { this.service = service; }
 
-    @GetMapping("/pedido-configuracion/estados")
-    public List<EstadoPedidoResponse> estados() { return service.listarEstados(); }
-
     @GetMapping("/solicitudes")
     public List<PedidoResponse> solicitudes() { return service.listarSolicitudes(); }
 
