@@ -26,7 +26,7 @@ public class SecurityConfig {
     @Bean SecurityFilterChain securityFilterChain(HttpSecurity http, NegocioAuthorizationFilter filter) throws Exception {
         http.csrf(c -> c.disable()).cors(Customizer.withDefaults())
             .authorizeHttpRequests(a -> a
-                .requestMatchers("/actuator/health","/actuator/health/**").permitAll()
+                .requestMatchers("/v3/api-docs", "/v3/api-docs/**", "/v3/api-docs.yaml").permitAll().requestMatchers("/actuator/health","/actuator/health/**").permitAll()
                 .requestMatchers(HttpMethod.POST,"/api/v1/solicitudes/*/convertir").hasAuthority("PEDIDOS_ESTADO_CAMBIAR")
                 .requestMatchers(HttpMethod.PUT,"/api/v1/pedidos/*/estado").hasAuthority("PEDIDOS_ESTADO_CAMBIAR")
                 .requestMatchers(HttpMethod.GET,"/api/v1/**").hasAuthority("PEDIDOS_CONSULTAR")
